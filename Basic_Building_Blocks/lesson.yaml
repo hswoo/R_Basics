@@ -22,54 +22,47 @@
 
 - Class: text
   Output: R은 자동으로 결과값인 12를 인쇄합니다. 매우 단순합니다. 일반적으로 계산기와 프로그래밍 언어를 
-     구분하여 설명할 때, 프로그래밍 언어는 절차를 자동화하거나 불필요한 반복을 피할 수 있는 점이 계산기와 차이점입니다.
-     따라서, R은 계산기보다는 프로그래밍 언어입니다.
+     구분하여 설명할 때, 프로그래밍 언어는 절차를 자동화하거나 불필요한 반복을 피할 수 있다는 점이 계산기와 차이점입니다.
+     따라서, R은 계산기라기 보다는 프로그래밍 언어입니다.
 
 - Class: text
-  Output: 위 5 + 7 사례를 다시 생각해보면, 매번 필요할 때 마다 5 + 7을 입력해서 결과값을 얻는 것 보다는
+  Output: 위 5 + 7 사례를 다시 생각해보면, 매번 필요할 때 마다 5 + 7을 입력해서 결과값을 얻는 것 보다는,
      하나의 새로운 변수를 생성하고 결과값을 저장하는 것이 보다 바람직 할 것 입니다. 
 
 - Class: text
-  Output: 'R에서 하나의 변수에 값을 대입하는 방법은 다음과 같은 변수를 사용하는 것 입니다. <-'
+  Output: 'R에서 하나의 변수에 값을 대입하는 방법은 다음과 같은 변수를 사용하는 것 입니다. 화살표 <-'
 
 - Class: text
-  Output: Think of the assignment operator as an arrow. You are assigning the value
-    on the right side of the arrow to the variable name on the left side of the arrow.
+  Output: 화살표를 할당(대입)연산자라고 부릅니다.  화살표 오른쪽에 있는 값을 화살표 왼쪽에 있는 변수이름에 할당(대입)하는 것 입니다.
 
 - Class: cmd_question
-  Output: To assign the result of 5 + 7 to a new variable called x, you type x <-
-    5 + 7. This can be read as 'x gets 5 plus 7'. Give it a try now.
+  Output: 새로운 변수 x를 생성하고 5 + 7의 결과를 대입하기 위하여, x <-
+    5 + 7 라고 입력해 봅시다.  이것은 'x에 5 플러스 7을 대입한다'라고 읽습니다.  한번 해봅시다.
   CorrectAnswer: x <- 5 + 7
   AnswerTests: any_of_exprs('x <- 5 + 7', 'x <- 7 + 5')
-  Hint: Type x <- 5 + 7. It's important to include a single space on each side of
-    the assignment operator, but do NOT put a space between the `<` and the `-` that
-    form the arrow.
+  Hint: 다음을 입력 x <- 5 + 7. 대입연자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.
 
 - Class: text
-  Output: You'll notice that R did not print the result of 12 this time. When you
-    use the assignment operator, R assumes that you don't want to see the result immediately,
-    but rather that you intend to use the result for something else later on.
+  Output: 이번에는 R이 12라는 값을 인쇄하지 않았음을 알 수 있다.  사용자가 대입연산자를 입력하여 사용하면, R은 해당 결과값이 즉시 필요한 것은 아니고 다른 곳에서 결과가 사용된다고 가정합니다.
 
 - Class: cmd_question
-  Output: To view the contents of the variable x, just type x and press Enter. Try
-    it now.
+  Output: 변수 x의 내용을 보기 위해서는, 단순히 x를 입력하고 엔터키를 누릅니다.  한번 해보세요.
   CorrectAnswer: x
   AnswerTests: omnitest(correctExpr='x')
-  Hint: Type x and press Enter. This will automatically print the value of x.
+  Hint: x를 타이핑하고 엔터키를 누릅니다. 이러한 명령은 x의 값을 자동으로 인쇄합니다.
 
 - Class: cmd_question
-  Output: Now, store the result of x - 3 in a new variable called y.
+  Output: 이제,  새로운 변수 y를 생성하고, x-3 결과값을 저장해 봅시다.
   CorrectAnswer: y <- x - 3
   AnswerTests: omnitest(correctExpr='y <- x - 3')
-  Hint: Type y <- x - 3 and press Enter. Whether you use x - 3 or x-3 is personal
-    preference, but it's good habit to include a space on either side of the assignment
-    operator.
+  Hint: y <- x - 3 이라고 입력하고 엔터키를 누릅니다. 사용자 선호에 따라, x - 3 을 사용하던지 x-3을 사용할 수 있습니다. 하지만,
+    연산자 좌우에는 공백을 입력하는 것이 바람직합니다.
 
 - Class: cmd_question
-  Output: What is the value of y? Type y to find out.
+  Output: 변수 y의 값은 무엇입니까? y를 입력하여 결과값을 알아보세요.
   CorrectAnswer: 'y'
   AnswerTests: omnitest(correctExpr='y')
-  Hint: Type y and press Enter.
+  Hint: y를 타이핑하고 Type y and press Enter.
 
 - Class: text
   Output: Now, let's create a small collection of numbers called a vector. Any object
