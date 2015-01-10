@@ -1,24 +1,21 @@
 ﻿- Class: meta
   Course: R Programming
-  Lesson: 기초지식
-  Author: Nick Carchedi
+  Lesson: Basic Building Blocks
+  Author: prof. hswoo
   Type: Coursera
-  Organization: JHU Biostat
-  Version: 2.2.0
+  Organization: DJU
+  Version: 1.0.0
 
 - Class: text
-  Output: 오늘 강의는 we will explore some basic building blocks of the R programming
-    language.
+  Output: 오늘 강의는 R 프로그래밍 언어의 기초적인 빌딩 블럭을 강의합니다.
 
 - Class: text
-  Output: If at any point you'd like more information on a particular topic related
-    to R, you can type help.start() at the prompt, which will open a menu of resources
-    (either within RStudio or your default web browser, depending on your setup).
-    Alternatively, a simple web search often yields the answer you're looking for.
+  Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
+    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면
+    웹 서칭을 해보는 것도 한 방법입니다.
 
 - Class: cmd_question
-  Output: In its simplest form, R can be used as an interactive calculator. Type
-    5 + 7 and press Enter.
+  Output: 간단한 예제부터 시작합니다.  R은 대화혈 계산기로 사용이 가능합니다. 5+7을 입력하고 엔터키를 누르세요.
   CorrectAnswer: 5 + 7
   AnswerTests: omnitest(correctExpr='5 + 7')
   Hint: Type 5 + 7 and press Enter.
