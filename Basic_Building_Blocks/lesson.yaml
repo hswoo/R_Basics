@@ -7,15 +7,15 @@
   Version: 1.0.0
 
 - Class: text
-  Output: 오늘 강의는 R 프로그래밍 언어의 기초적인 빌딩 블럭을 강의합니다.
+  Output: 오늘 강의는 R 프로그래밍 언어에서 사용되는 매우 기초적인 내용을 학습합니다. 
 
 - Class: text
   Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
-    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면
+    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면 
     웹 서칭을 해보는 것도 한 방법입니다.
 
 - Class: cmd_question
-  Output: 간단한 예제부터 시작합니다.  R은 대화혈 계산기로 사용이 가능합니다. 5+7을 입력하고 엔터키를 누르세요.
+  Output: 간단한 예제부터 시작합니다.  R은 대화형 계산기로 사용이 가능합니다. 5+7을 입력하고 엔터키를 누르세요.
   CorrectAnswer: 5 + 7
   AnswerTests: omnitest(correctExpr='5 + 7')
   Hint: Type 5 + 7 and press Enter.
