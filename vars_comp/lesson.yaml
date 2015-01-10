@@ -1,0 +1,62 @@
+﻿- Class: meta
+  Course: R Programming
+  Lesson: Variables Computing
+  Author: prof. hswoo
+  Type: Coursera
+  Organization: Daejeon Univ.
+  Version: 2015.1.10.0.1
+
+- Class: text
+  Output: 이번 강의는 R 프로그래밍 언어에서 사용되는 변수 계산을 학습합니다. 
+
+- Class: text
+  Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
+    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면 
+    웹 서칭을 해보는 것도 한 방법입니다.
+
+- Class: cmd_question
+  Output: 'R에서는 계산식이 포함된 변수값을 입력으로 변수에 대입할 수 있습니다.  
+숫자형 변수 n을 선언하고 계산식 3*4+2를 대입하는 명령어를 써 봅시다.' 
+  CorrectAnswer: n <- 3*4+2
+  AnswerTests: any_of_exprs('n <- 3*4+2', 'n<-3*4+2')
+  Hint: '다음을 입력 n <- 3*4+2. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: n
+  AnswerTests: any_of_exprs('n', 'print(n)')
+  Hint: 다음을 입력 n.
+
+- Class: cmd_question
+  Output: print(변수이름) 함수를 이용하면 보다 명확하게 변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(n)
+  AnswerTests: any_of_exprs('n', 'print(n)')
+  Hint: 다음을 입력 print(n).
+
+- Class: cmd_question
+  Output: 'R에서는 숫자만으로 이루어진 단순 계산식 뿐만 아니라, 특정 변수가 포함된 계산식을 사용할 수 있습니다.  
+     변수 m을 선언하고, 계산식 3*n+4 를 대입해 봅시다.'   
+  CorrectAnswer: m <- 3*n+4
+  AnswerTests: omnitest(correctExpr='m <- 3*n+4')
+  Hint: m <- 3*n+4를 타이핑하고 엔터키를 누릅니다. 
+
+- Class: cmd_question
+  Output: print(변수이름) 함수를 이용하여 변수 m의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(m)
+  AnswerTests: any_of_exprs('m', 'print(m)')
+  Hint: 다음을 입력 print(m).
+
+- Class: text
+  Output: 이제 변수 계산에 대한 학습을 마감할 시간입니다.  
+
+- Class: mult_question  
+  Output: 마감하기 전에, 다음 선택 문제를 풀어봅시다.  다음 중 변수 계산에 대한 표현식중 틀린 것은? 
+  AnswerChoices: w <- 4*a;z <- 4*2+1;z <- 3/2;z <- 3*TRUE+2
+  CorrectAnswer: z <- 3*TRUE+2
+  AnswerTests: omnitest(correctVal= 'z <- 3*TRUE+2')
+  Hint: 논리값은 숫자와 함께 계산을 할 수 없습니다. 기억하세요.
+
