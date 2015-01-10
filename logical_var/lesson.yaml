@@ -1,13 +1,13 @@
 ﻿- Class: meta
   Course: R Programming
-  Lesson: Basic Building Blocks
+  Lesson: Logical Variables
   Author: prof. hswoo
   Type: Coursera
   Organization: Daejeon Univ.
   Version: 2015.1.10.0.1
 
 - Class: text
-  Output: 오늘 강의는 R 프로그래밍 언어에서 사용되는 매우 기초적인 내용을 학습합니다. 
+  Output: 오늘 강의는 R 프로그래밍 언어에서 사용되는 논리 변수를 학습합니다. 
 
 - Class: text
   Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
@@ -15,218 +15,48 @@
     웹 서칭을 해보는 것도 한 방법입니다.
 
 - Class: cmd_question
-  Output: 간단한 예제부터 시작합니다.  R은 대화형 계산기로 사용이 가능합니다. 5+7을 입력하고 엔터키를 누르세요.
-  CorrectAnswer: 5 + 7
-  AnswerTests: omnitest(correctExpr='5 + 7')
-  Hint: 5 + 7을 입력하고 Enter 키를 누름.
+  Output: R에서는 변수에 숫자 및 문자 이외에 참과 거짓으로 구별되는 논리값(TRUE, FALSE)을 입력할 수 있습니다.  
+문자열 변수 z를 선언하고 논리값 TRUE를 대입하는 명령어를 써 봅시다. 논리값은 TRUE 혹은 FALSE로 표현합니다. 
+  CorrectAnswer: 'z <- TRUE'
+  AnswerTests: any_of_exprs('z <- TRUE', 'z<-TRUE')
+  Hint: '다음을 입력 z <- TRUE. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: text
-  Output: R은 자동으로 결과값인 12를 인쇄합니다. 매우 단순합니다. 일반적으로 계산기와 프로그래밍 언어를 
-     구분하여 설명할 때, 프로그래밍 언어는 절차를 자동화하거나 불필요한 반복을 피할 수 있다는 점이 계산기와 차이점입니다.
-     따라서, R은 계산기라기 보다는 프로그래밍 언어입니다.
-
-- Class: text
-  Output: 위 5 + 7 사례를 다시 생각해보면, 매번 필요할 때 마다 5 + 7을 입력해서 결과값을 얻는 것 보다는,
-     하나의 새로운 변수를 생성하고 결과값을 저장하는 것이 보다 바람직 할 것 입니다. 
-
-- Class: text
-  Output: 'R에서 하나의 변수에 값을 대입하는 방법은 다음과 같은 변수를 사용하는 것 입니다. 화살표 <-'
-
-- Class: text
-  Output: 화살표를 할당(대입)연산자라고 부릅니다.  화살표 오른쪽에 있는 값을 화살표 왼쪽에 있는 변수이름에 할당(대입)하는 것 입니다.
+  Output: 논리값 TRUE와 FALSE는 문자열로 되어 있지만, 따옴표를 사용하지 않아도 됩니다.
 
 - Class: cmd_question
-  Output: 새로운 변수 x를 생성하고 5 + 7의 결과를 대입하기 위하여, x <-
-    5 + 7 라고 입력해 봅시다.  이것은 'x에 5 플러스 7을 대입한다'라고 읽습니다.  한번 해봅시다.
-  CorrectAnswer: x <- 5 + 7
-  AnswerTests: any_of_exprs('x <- 5 + 7', 'x <- 7 + 5')
-  Hint: 다음을 입력 x <- 5 + 7. 대입연자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.
-
-- Class: text
-  Output: 이번에는 R이 12라는 값을 인쇄하지 않았음을 알 수 있습니다.  사용자가 대입연산자를 입력하여 사용하면, R은 해당 결과값이 즉시 필요한 것은 아니고 다른 곳에서 결과가 사용된다고 가정합니다.
-
-- Class: cmd_question
-  Output: 변수 x의 내용을 보기 위해서는, 단순히 x를 입력하고 엔터키를 누릅니다.  한번 해보세요.
-  CorrectAnswer: x
-  AnswerTests: omnitest(correctExpr='x')
-  Hint: x를 타이핑하고 엔터키를 누릅니다. 이러한 명령은 x의 값을 자동으로 인쇄합니다.
-
-- Class: cmd_question
-  Output: 이제,  새로운 변수 y를 생성하고, x-3 결과값을 저장해 봅시다.
-  CorrectAnswer: y <- x - 3
-  AnswerTests: omnitest(correctExpr='y <- x - 3')
-  Hint: y <- x - 3 이라고 입력하고 엔터키를 누릅니다. 사용자 선호에 따라, x - 3 을 사용하던지 x-3을 사용할 수 있습니다. 하지만,
-    연산자 좌우에는 공백을 입력하는 것이 바람직합니다.
-
-- Class: cmd_question
-  Output: 변수 y의 값은 무엇입니까? y를 입력하여 결과값을 알아보세요.
-  CorrectAnswer: 'y'
-  AnswerTests: omnitest(correctExpr='y')
-  Hint: y를 타이핑하고 Type y and press Enter.
-
-- Class: text
-  Output: Now, let's create a small collection of numbers called a vector. Any object
-    that contains data is called a data structure and numeric vectors are the simplest
-    type of data structure in R. In fact, even a single number is considered a vector
-    of length one.
-
-- Class: cmd_question
-  Output: The easiest way to create a vector is with the c() function, which stands
-    for 'concatenate' or 'combine'. To create a vector containing the numbers 1.1,
-    9, and 3.14, type c(1.1, 9, 3.14). Try it now and store the result in a variable
-    called z.
-  CorrectAnswer: z <- c(1.1, 9, 3.14)
-  AnswerTests: omnitest(correctExpr='z <- c(1.1, 9, 3.14)')
-  Hint: Inputting z <- c(1.1, 9, 3.14) will assign the vector (1.1, 9, 3.14) to a
-    new variable called z. Including single spaces after the commas in the vector
-    is not required, but helps make your code less cluttered and more readable.
-
-- Class: cmd_question
-  Output: Anytime you have questions about a particular function, you can access R's
-    built-in help files via the `?` command. For example, if you want more information
-    on the c() function, type ?c without the parentheses that normally follow a function
-    name. Give it a try.
-  CorrectAnswer: ?c
-  AnswerTests: omnitest(correctExpr='?c')
-  Hint: Type ?c and press Enter. This will bring up the help file for the c() function.
-
-- Class: cmd_question
-  Output: Type z to view its contents. Notice that there are no commas separating
-    the values in the output.
+  Output: 논리값 변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 변수이름을 입력합니다.  한번 해봅시다.
   CorrectAnswer: z
-  AnswerTests: omnitest(correctExpr='z')
-  Hint: Type z and press Enter to view its contents.
+  AnswerTests: any_of_exprs('z', 'print(z)')
+  Hint: 다음을 입력 z.
 
 - Class: cmd_question
-  Output: You can combine vectors to make a new vector. Create a new vector that contains
-    z, 555, then z again in that order. Don't assign this vector to a new variable,
-    so that we can just see the result immediately.
-  CorrectAnswer: c(z, 555, z)
-  AnswerTests: omnitest(correctExpr='c(z, 555, z)')
-  Hint: Type c(z, 555, z). Don't create a new variable. We just want to view the result.
+  Output: print(변수이름) 함수를 이용하면 보다 명확하게 변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(z)
+  AnswerTests: any_of_exprs('z', 'print(z)')
+  Hint: 다음을 입력 print(z).
 
 - Class: cmd_question
-  Output: 'Numeric vectors can be used in arithmetic expressions. Type the following
-    to see what happens: z * 2 + 100.'
-  CorrectAnswer: z * 2 + 100
-  AnswerTests: omnitest(correctExpr='z * 2 + 100')
-  Hint: Enter z * 2 + 100, without assigning the result to a variable. The `*` symbol
-    is used for multiplication and shares a key with the number 8 on many keyboards.
-
-- Class: text
-  Output: First, R multiplied each of the three elements in z by 2. Then it added
-    100 to each element to get the result you see above.
-
-- Class: text
-  Output: Other common arithmetic operators are `+`, `-`, `/`, and `^` (where x^2
-    means 'x squared'). To take the square root, use the sqrt() function and to take
-    the absolute value, use the abs() function.
+  Output: R에서 논리값 TRUE는 T로, FALSE는 F로 간략화하여 사용할 수 있습니다.  
+     변수 w를 선언하고, 논리값 F를 대입해 봅시다.   
+  CorrectAnswer: w <- F
+  AnswerTests: omnitest(correctExpr='w <- "F"')
+  Hint: w <- "F"를 타이핑하고 엔터키를 누릅니다. 
 
 - Class: cmd_question
-  Output: Take the square root of z - 1 and assign it to a new variable called my_sqrt.
-  CorrectAnswer: my_sqrt <- sqrt(z - 1)
-  AnswerTests: omnitest(correctExpr='my_sqrt <- sqrt(z - 1)')
-  Hint: Assign the result of sqrt(z - 1) to a variable called my_sqrt.
-
-- Class: mult_question
-  Output: Before we view the contents of the my_sqrt variable, what do you think it
-    contains?
-  CorrectAnswer: a vector of length 3
-  AnswerChoices: a vector of length 3; a single number (i.e a vector of length 1);
-    a vector of length 0 (i.e. an empty vector)
-  AnswerTests: omnitest(correctVal='a vector of length 3')
-  Hint: 'Think about how R handled the other ''vectorized'' operations: element-by-element.'
-
-- Class: cmd_question
-  Output: Print the contents of my_sqrt.
-  CorrectAnswer: my_sqrt
-  AnswerTests: omnitest(correctExpr='my_sqrt')
-  Hint: Just type my_sqrt and press Enter to view its value.
+  Output: print(변수이름) 함수를 이용하여 논리 변수 w를 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(w)
+  AnswerTests: any_of_exprs('w', 'print(w)')
+  Hint: 다음을 입력 print(w).
 
 - Class: text
-  Output: As you may have guessed, R first subtracted 1 from each element of z, then
-    took the square root of each element. This leaves you with a vector of the same
-    length as the original vector z.
+  Output: 이제 논리 변수에 대한 학습을 마감할 시간입니다.  
 
-- Class: cmd_question
-  Output: Now, create a new variable called my_div that gets the value of z divided
-    by my_sqrt.
-  CorrectAnswer: my_div <- z / my_sqrt
-  AnswerTests: omnitest(correctExpr='my_div <- z / my_sqrt')
-  Hint: Enter my_div <- z / my_sqrt. The spaces on either side of the `/` sign are not
-    required, but can often improve readability by making code appear less cluttered.
-    In the end, it's personal preference.
+- Class: mult_question  
+  Output: 마감하기 전에, 다음 선택 문제를 풀어봅시다.  다음 중 논리 변수에 대한 표현식중 틀린 것은? 
+  AnswerChoices: w <- TRUE;z <- FALSE;z <- T;z <- FT
+  CorrectAnswer: z <- FT
+  AnswerTests: omnitest(correctVal= 'z <- FT')
+  Hint: 논리값은 TRUE, FALSE, T, F로만 표현됩니다. 기억하세요.
 
-- Class: mult_question
-  Output: Which statement do you think is true?
-  CorrectAnswer: The first element of my_div is equal to the first element of z divided
-    by the first element of my_sqrt, and so on...
-  AnswerChoices: The first element of my_div is equal to the first element of z divided
-    by the first element of my_sqrt, and so on...; my_div is a single number (i.e a
-    vector of length 1); my_div is undefined
-  AnswerTests: omnitest(correctVal='The first element of my_div is equal to the first
-    element of z divided by the first element of my_sqrt, and so on...')
-  Hint: Think about how R handled the other 'vectorized' operations like `+` and `*`.
-
-- Class: cmd_question
-  Output: Go ahead and print the contents of my_div.
-  CorrectAnswer: my_div
-  AnswerTests: omnitest(correctExpr='my_div')
-  Hint: Type my_div and press Enter to see its contents.
-
-- Class: text
-  Output: When given two vectors of the same length, R simply performs the specified
-    arithmetic operation (`+`, `-`, `*`, etc.) element-by-element. If the vectors
-    are of different lengths, R 'recycles' the shorter vector until it is the same
-    length as the longer vector.
-
-- Class: text
-  Output: When we did z * 2 + 100 in our earlier example, z was a vector of length
-    3, but technically 2 and 100 are each vectors of length 1.
-
-- Class: text
-  Output: 'Behind the scenes, R is ''recycling'' the 2 to make a vector of 2s and
-    the 100 to make a vector of 100s. In other words, when you ask R to compute z
-    * 2 + 100, what it really computes is this: z * c(2, 2, 2) + c(100, 100, 100).'
-
-- Class: cmd_question
-  Output: To see another example of how this vector 'recycling' works, try adding
-    c(1, 2, 3, 4) and c(0, 10). Don't worry about saving the result in a new variable.
-  CorrectAnswer: c(1, 2, 3, 4) + c(0, 10)
-  AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10)')
-  Hint: Enter c(1, 2, 3, 4) + c(0, 10) in the console to see how R adds two vectors
-    of different length. Don't assign the result to a variable.
-
-- Class: text
-  Output: If the length of the shorter vector does not divide evenly into the length
-    of the longer vector, R will still apply the 'recycling' method, but will throw
-    a warning to let you know something fishy might be going on.
-
-- Class: cmd_question
-  Output: Try c(1, 2, 3, 4) + c(0, 10, 100) for an example.
-  CorrectAnswer: c(1, 2, 3, 4) + c(0, 10, 100)
-  AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10, 100)')
-  Hint: Type c(1, 2, 3, 4) + c(0, 10, 100) to see how R handles adding two vectors,
-    when the shorter vector's length does not divide evenly into the longer vector's
-    length. Don't worry about assigning the result to a variable.
-
-- Class: text
-  Output: Before concluding this lesson, I'd like to show you a couple of time-saving tricks.
-
-- Class: text
-  Output: Earlier in the lesson, you computed z * 2 + 100. Let's pretend that you made a mistake and that you meant to add 1000 instead of 100. You could either re-type the expression, or...
-
-- Class: cmd_question
-  Output: In many programming environments, the up arrow will cycle through previous commands. Try hitting the up arrow on your keyboard until you get to this command (z * 2 + 100), then change 100 to 1000 and hit Enter. If the up arrow doesn't work for you, just type the corrected command.
-  CorrectAnswer: z * 2 + 1000
-  AnswerTests: omnitest(correctExpr='z * 2 + 1000')
-  Hint: If your environment does not support the up arrow feature, then just type the corrected command to move on.
-
-- Class: text
-  Output: Finally, let's pretend you'd like to view the contents of a variable that you created earlier, but you can't seem to remember if you named it my_div or myDiv. You could try both and see what works, or...
-
-- Class: cmd_question
-  Output: You can type the first two letters of the variable name, then hit the Tab key (possibly more than once). Most programming environments will provide a list of variables that you've created that begin with 'my'. This is called auto-completion and can be quite handy when you have many variables in your workspace. Give it a try. (If auto-completion doesn't work for you, just type my_div and press Enter.)
-  CorrectAnswer: my_div
-  AnswerTests: omnitest(correctExpr='my_div')
-  Hint: If your programming environment doesn't support auto-completion, just type my_div and hit Enter to move on.
