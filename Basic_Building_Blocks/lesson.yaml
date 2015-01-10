@@ -3,8 +3,8 @@
   Lesson: Basic Building Blocks
   Author: prof. hswoo
   Type: Coursera
-  Organization: DJU
-  Version: 1.0.0
+  Organization: Daejeon Univ.
+  Version: 2015.1.10.0.1
 
 - Class: text
   Output: 오늘 강의는 R 프로그래밍 언어에서 사용되는 매우 기초적인 내용을 학습합니다. 
@@ -18,22 +18,19 @@
   Output: 간단한 예제부터 시작합니다.  R은 대화형 계산기로 사용이 가능합니다. 5+7을 입력하고 엔터키를 누르세요.
   CorrectAnswer: 5 + 7
   AnswerTests: omnitest(correctExpr='5 + 7')
-  Hint: Type 5 + 7 and press Enter.
+  Hint: 5 + 7을 입력하고 Enter 키를 누름.
 
 - Class: text
-  Output: R simply prints the result of 12 by default. However, R is a programming
-    language and often the reason we use a programming language as opposed to a calculator
-    is to automate some process or avoid unnecessary repetition.
+  Output: R은 자동으로 결과값인 12를 인쇄합니다. 매우 단순합니다. 일반적으로 계산기와 프로그래밍 언어를 
+     구분하여 설명할 때, 프로그래밍 언어는 절차를 자동화하거나 불필요한 반복을 피할 수 있는 점이 계산기와 차이점입니다.
+     따라서, R은 계산기보다는 프로그래밍 언어입니다.
 
 - Class: text
-  Output: In this case, we may want to use our result from above in a second calculation.
-    Instead of retyping 5 + 7 every time we need it, we can just create a new variable
-    that stores the result.
+  Output: 위 5 + 7 사례를 다시 생각해보면, 매번 필요할 때 마다 5 + 7을 입력해서 결과값을 얻는 것 보다는
+     하나의 새로운 변수를 생성하고 결과값을 저장하는 것이 보다 바람직 할 것 입니다. 
 
 - Class: text
-  Output: 'The way you assign a value to a variable in R is by using the assignment
-    operator, which is just a ''less than'' symbol followed by a ''minus'' sign. It
-    looks like this: <-'
+  Output: 'R에서 하나의 변수에 값을 대입하는 방법은 다음과 같은 변수를 사용하는 것 입니다. <-'
 
 - Class: text
   Output: Think of the assignment operator as an arrow. You are assigning the value
