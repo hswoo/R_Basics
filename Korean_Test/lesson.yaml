@@ -1,18 +1,18 @@
 ﻿- Class: meta
-  Course: Course_1
-  Lesson: Lesson_1
+  Course: R_Basics
+  Lesson: Korean_Test
   Author: Prof. H-S Woo
   Type: Standard
   Organization: Daejon University
   Version: 2.2.20
 
 - Class: text
-  Output: Today오늘, we are going to learn how to do something in R.
+  Output: 오늘은 R 실행과 관련한 간단한 사례를 학습해 봅시다.
   
 - Class: mult_question  
-  Output: Who is the author of this training material ?
+  Output: 이 교육재료의 저자는 누구입니까?
   AnswerChoices: Prof.우;Prof.Cox;Prof.Cowls;Prof.David
-  CorrectAnswer: Prof.Woo
+  CorrectAnswer: Prof.우
   AnswerTests: omnitest(correctVal= 'Prof.우')
   Hint: This person doesn't say "Wooo~~~~~~~~~~~~~~."
 
