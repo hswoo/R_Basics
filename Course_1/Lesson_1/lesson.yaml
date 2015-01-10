@@ -1,0 +1,42 @@
+﻿- Class: meta
+  Course: Course_1
+  Lesson: Lesson_1
+  Author: Prof. H-S Woo
+  Type: Standard
+  Organization: Daejon University
+  Version: 2.2.20
+
+- Class: text
+  Output: Today오늘, we are going to learn how to do something in R.
+  
+- Class: mult_question  
+  Output: Who is the author of this training material ?
+  AnswerChoices: Prof.우;Prof.Cox;Prof.Cowls;Prof.David
+  CorrectAnswer: Prof.Woo
+  AnswerTests: omnitest(correctVal= 'Prof.우')
+  Hint: This person doesn't say "Wooo~~~~~~~~~~~~~~."
+
+- Class: cmd_question
+  Output: Type x <- 10 to assign the value 10 to the variable x.
+  CorrectAnswer: x <- 10
+  AnswerTests: omnitest(correctExpr='x <- 10')
+  Hint: Try x <- 10!
+
+- Class: video
+  Output: Would you like to watch a short Youtube video for a break?
+  VideoLink: 'http://www.youtube.com/watch?v=3WOGRCy3wBw'
+
+- Class: exact_question
+  Output: "How many people are in youtube? it needs numerical answer in the console."
+  CorrectAnswer: 3
+  AnswerTests: omnitest(correctVal=3)
+  Hint: Note that how many women?
+
+- Class: text_question
+  Output: "What is name of the song??"
+  CorrectAnswer: be my baby
+  AnswerTests: omnitest(correctVal='be my baby')
+  Hint: Listen carefully !
+
+- Class: text
+  Output: This is all for today.
