@@ -104,8 +104,8 @@
 - Class: mult_question  
   Output: 마감하기 전에, 다음 문제를 풀어봅시다.  
      벡터변수 vv에 c("i","have",1,"apple", "and",3, "melons")를 대입할 때, vv의 인쇄 결과로 맞는 것은? 
-  AnswerChoices: i have 1.0 apple and 3 melons;i have 1 apple and 3.0 melons;i have 1.0 appleand 3.0 melons;i have 1 apple and 3 melons
-  CorrectAnswer: i have 1 apple and 3 melons
+  AnswerChoices: '"i" "have" "1.0" "apple" "and" "3" "melons";"i" "have" "1" "apple" "and" "3.0" "melons";"i" "have" "1.0" "apple" "and" "3.0" "melons";"i" "have" "1" "apple" "and" "3" "melons"'
+  CorrectAnswer: '"i" "have" "1" "apple" "and" "3" "melons"'
   AnswerTests: omnitest(correctVal= 'i have 1 apple and 3 melons')
   Hint: 'R에서 벡터는 숫자를 문자로 표기한다는 것을 기억하세요.'
 
