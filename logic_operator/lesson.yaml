@@ -1,13 +1,13 @@
 ﻿- Class: meta
   Course: R Programming
-  Lesson: Variables Computing
+  Lesson: logical opeartor
   Author: prof. hswoo
   Type: Coursera
   Organization: Daejeon Univ.
   Version: 2015.1.10.0.1
 
 - Class: text
-  Output: 이번 강의는 R 프로그래밍 언어에서 사용되는 비교 연산자를 학습합니다. 
+  Output: 이번 강의는 R 프로그래밍 언어에서 사용되는 논리 연산자를 학습합니다. 
 
 - Class: text
   Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
@@ -15,56 +15,50 @@
     웹 서칭을 해보는 것도 한 방법입니다.
 
 - Class: text
-  Output: 비교 연산자는 특정 대상을 비교한 결과가 참(TRUE) 또는 거짓(FALSE)로 구성되는 
-    논리(boolean) 값으로 결정되는 연산자입니다.  
+  Output: 논리 연산자는 불린(논리)값을 대상으로 비교한 결과가 논리값으로 결정되는 연산자를 말합니다.  
 
 - Class: text
-  Output: '비교연산자는 <, >, <=, >=, ==, !=의 6개가 존재합니다. 
-           즉, 일반적인 수학에서의 기호를 기준으로 참이면 TRUE, 거짓이면 FALSE로 설정됩니다.'
+  Output: '논리연산자는 !, &, || 가 존재합니다. 부호 양 옆의 불린값에 따라 의미와 결과가 달라집니다.'
 
 - Class: text
-  Output: '비교연산자 < 가 a < b로 사용될 때는, a가 b보다 작으면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 < 7인 경우는 TRUE 입니다.'
+  Output: '비교연산자 ! 가 !A 형태로 사용될 때는, A의 값에 따라, A가 TRUE 이면 결과값이 FALSE, 
+     A가 FALSE 이면 결과값이 TRUE 가 됩니다.'
 
 - Class: text
-  Output: '또한, 비교연산자 > 가 a > b로 사용될 때는 a가 b보다 크면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 > 7인 경우는 FALSE 입니다.'
+  Output: '또한, 비교연산자 & 가 A & B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
+     즉, (A,B)가 (TRUE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (TRUE,FALSE) 인 경우는 결과값이 FALSE, 
+         (A,B)가 (FALSE,TRUE) 인 경우는 결과값이 FALSE, (A,B)가 (FALSE,FALSE) 인 경우는 결과값이 FALSE 입니다.'
 
 - Class: text
-  Output: '비교연산자 <= 가 a <= b로 사용될 때는, a가 b보다 작거나 같으면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 <= 7인 경우는 TRUE 입니다.'
+  Output: 정리하면, A & B 결과값은 A와 B가 모두 TRUE 인 경우만 결과값이 TRUE 입니다. 나머지 경우는 모두 FALSE 입니다.
 
 - Class: text
-  Output: '또한, 비교연산자 >= 가 a >= b로 사용될 때는 a가 b보다 크거나 같으면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 >= 7인 경우는 FALSE 입니다.'
+  Output: '또한, 비교연산자 || 가 A || B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
+     즉, (A,B)가 (TRUE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (TRUE,FALSE) 인 경우는 결과값이 TRUE, 
+         (A,B)가 (FALSE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (FALSE,FALSE) 인 경우는 결과값이 FALSE 입니다.'
 
 - Class: text
-  Output: '비교연산자 == 가 a == b로 사용될 때는, a와 b가 같으면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 == 7인 경우는 FALSE 입니다.'
-
-- Class: text
-  Output: '또한, 비교연산자 != 가 a != b로 사용될 때는 a와 b가 같지 않으면 TRUE, 그렇지 않으면 FALSE를 나타냅니다. 
-           예를 들어, 4 != 7인 경우는 TRUE 입니다.'
+  Output: 정리하면, A || B 결과값은 A와 B가 모두 FASLE 인 경우만 결과값이 FALSE 입니다. 나머지 경우는 모두 TRUE 입니다.
 
 - Class: cmd_question
-  Output: 비교 연산자를 학습하기 위하여, 변수 a를 선언하고 값 4를 대입해 봅시다.   
-  CorrectAnswer: a <- 4
-  AnswerTests: any_of_exprs('a <- 4', 'a<-4')
-  Hint: '다음을 입력 a <- 4. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+  Output: 논리 연산자를 학습하기 위하여, 변수 A 를 선언하고 논리값 TRUE 를 대입해 봅시다.   
+  CorrectAnswer: A <- TRUE
+  AnswerTests: any_of_exprs('A <- TRUE', 'A<-TRUE')
+  Hint: '다음을 입력 A <- TRUE.  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: cmd_question
-  Output: 또한, 변수 b를 선언하고 값 7을 대입해 봅시다.   
-  CorrectAnswer: b <- 7
-  AnswerTests: any_of_exprs('b <- 7', 'b<-7')
-  Hint: '다음을 입력 b <- 7. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+  Output: 또한, 변수 B를 선언하고 논리값 FALSE 를 대입해 봅시다.   
+  CorrectAnswer: B <- FALSE
+  AnswerTests: any_of_exprs('B <- FALSE', 'B<-FALSE')
+  Hint: '다음을 입력 B <- FALSE. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: cmd_question
-  Output: '이제, 비교 연산자를 활용하여 변수 a가 b보다 작은지 질의해 봅시다. 
-           변수 c를 선언하고 표현식을 대입합니다. 
-           참고로 표현식은 변수 연산자 변수의 순서로 입력합니다.'   
-  CorrectAnswer: c <- a < b
-  AnswerTests: any_of_exprs('c <- a < b', 'c<-a<b')
-  Hint: '다음을 입력 c <- a < b. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+  Output: '이제, 논리 연산자를 활용하여 A & B 결과값을 알아 봅시다.  
+           변수 C를 선언하고 표현식을 대입합니다. 
+           참고로 표현식은 변수 연산자(&) 변수의 순서로 입력합니다.'   
+  CorrectAnswer: C <- A & B
+  AnswerTests: any_of_exprs('C <- A & B', 'C<-A&B')
+  Hint: '다음을 입력 C <- A & B. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: text
   Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
@@ -72,62 +66,66 @@
 - Class: cmd_question
   Output: 계산식이 대입된 변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
      R에서는 해당 변수이름을 입력합니다.  한번 해봅시다.
-  CorrectAnswer: c
-  AnswerTests: any_of_exprs('c', 'print(c)')
-  Hint: 다음을 입력 c.
+  CorrectAnswer: C
+  AnswerTests: any_of_exprs('C', 'print(C)')
+  Hint: 다음을 입력 C.
 
 - Class: cmd_question
   Output: print(변수이름) 함수를 이용하면 보다 명확하게 변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
-  CorrectAnswer: print(c)
-  AnswerTests: any_of_exprs('c', 'print(c)')
-  Hint: 다음을 입력 print(c).
-
-- Class: text
-  Output: '위 예제와 유사한 사례로 같지 않음(!=)에 대한 비교를 할 수 있습니다.'
+  CorrectAnswer: print(C)
+  AnswerTests: any_of_exprs('C', 'print(C)')
+  Hint: 다음을 입력 print(C).
 
 - Class: cmd_question
-  Output: 비교 연산자를 학습하기 위하여, 변수 ca를 선언하고 문자값 "a"를 대입해 봅시다.   
-  CorrectAnswer: ca <- "a"
-  AnswerTests: any_of_exprs('ca <- "a"', 'ca<-"a"')
-  Hint: '다음을 입력 ca <- "a". 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
-
-- Class: cmd_question
-  Output: 또한, 변수 cb를 선언하고 문자값 "b"를 대입해 봅시다.   
-  CorrectAnswer: cb <- "b"
-  AnswerTests: any_of_exprs('cb <- "b"', 'cb<-"b"')
-  Hint: '다음을 입력 cb <- "b". 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
-
-- Class: cmd_question
-  Output: '이제, 비교 연산자를 활용하여 변수 ca와 cb가 같은지 질의해 봅시다. 
-           변수 cc를 선언하고 표현식을 대입합니다. 
-           참고로 표현식은 변수 연산자(!=) 변수의 순서로 입력합니다.'   
-  CorrectAnswer: cc <- ca != cb
-  AnswerTests: any_of_exprs('cc <- ca != cb', 'cc<-ca!=cb')
-  Hint: '다음을 입력 cc <- ca != cb. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
-
-- Class: text
-  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+  Output: '이제, 논리 연산자를 활용하여 A || B 결과값을 알아 봅시다.  
+           변수 D를 선언하고 표현식을 대입합니다. 
+           참고로 표현식은 변수 연산자(||) 변수의 순서로 입력합니다.'   
+  CorrectAnswer: D <- A || B
+  AnswerTests: any_of_exprs('D <- A || B', 'D <- A || B')
+  Hint: '다음을 입력 D <- A || B. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: cmd_question
   Output: 계산식이 대입된 변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
      R에서는 해당 변수이름을 입력합니다.  한번 해봅시다.
-  CorrectAnswer: cc
-  AnswerTests: any_of_exprs('cc', 'print(cc)')
-  Hint: 다음을 입력 cc.
+  CorrectAnswer: D
+  AnswerTests: any_of_exprs('D', 'print(D)')
+  Hint: 다음을 입력 D.
 
 - Class: cmd_question
   Output: print(변수이름) 함수를 이용하면 보다 명확하게 변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
-  CorrectAnswer: print(cc)
-  AnswerTests: any_of_exprs('cc', 'print(cc)')
-  Hint: 다음을 입력 print(cc).
+  CorrectAnswer: print(D)
+  AnswerTests: any_of_exprs('D', 'print(D)')
+  Hint: 다음을 입력 print(D).
 
 - Class: text
-  Output: 이제 비교연산자에 대한 학습을 마감할 시간입니다.  
+  Output: '자, 이제는 해당 논리변수값의 반대(역)을 표현하는 논리연산자인 !에 대한 학습을 해 봅시다.
+           논리 연산자 ! 를 활용하여 !A 결과값을 알아 봅시다.  
+           변수 E를 선언하고 표현식을 대입합니다. 
+           참고로 표현식은 연산자(!) 변수의 순서로 입력하며, 논리연산자와 변수는 붙여서 입력합니다.'   
+  CorrectAnswer: E <- !A
+  AnswerTests: any_of_exprs('E <- !A', 'E<-!A')
+  Hint: '다음을 입력 E <- !A. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: cmd_question
+  Output: 계산식이 대입된 변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: E
+  AnswerTests: any_of_exprs('E', 'print(E)')
+  Hint: 다음을 입력 E.
+
+- Class: cmd_question
+  Output: print(변수이름) 함수를 이용하면 보다 명확하게 변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(E)
+  AnswerTests: any_of_exprs('E', 'print(E)')
+  Hint: 다음을 입력 print(E).
+
+- Class: text
+  Output: 이제 논리연산자에 대한 학습을 마감할 시간입니다.  
 
 - Class: mult_question  
-  Output: 마감하기 전에, 다음 선택 문제를 풀어봅시다.  다음 중 비교연산자에 대한 표현식중 틀린 것은? 
-  AnswerChoices: a < b;c>3;d != 4;d =! 4
-  CorrectAnswer: d =! 4
-  AnswerTests: omnitest(correctVal= 'd =! 4')
-  Hint: '같지 않음에 대한 비교연산자는 != 입니다. 기억하세요.'
+  Output: 마감하기 전에, 다음 문제를 풀어봅시다.  A가 FALSE 이고 B가 TRUE 일때, A&B, A||B, !B의 결과값을 순서대로 적은 것은? 
+  AnswerChoices: FALSE,TRUE,FALSE;TRUE,TRUE,FALSE;FALSE,TRUE,TRUE;TRUE,TRUE,FALSE;
+  CorrectAnswer: FALSE,TRUE,FALSE
+  AnswerTests: omnitest(correctVal= 'FALSE,TRUE,FALSE')
+  Hint: '&는 모두 TRUE 일때만 TRUE, ||는 모두 FALSE 일때만 FALSE, !는 반대값을 기억하세요.'
 
