@@ -1,0 +1,113 @@
+﻿- Class: meta
+  Course: R Programming
+  Lesson: logical vector
+  Author: prof. hswoo
+  Type: Coursera
+  Organization: Daejeon Univ.
+  Version: 2015.1.11.0.1
+
+- Class: text
+  Output: 이번 강의는 R 프로그래밍 언어에서 사용되는 논리 벡터를 학습합니다. 
+
+- Class: text
+  Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
+    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면 
+    웹 서칭을 해보는 것도 한 방법입니다.
+
+- Class: text
+  Output: 'R에서 논리 벡터는 연속적인 논리 값의 조합이라 할 수 있습니다.  변수와 마찬가지로 참과 거짓으로 구별되는 
+          논리값(TRUE, FALSE)을 벡터로 사용하는 것이 가능합니다.'
+
+- Class: text
+  Output: '논리 벡터는 c() 함수를 이용하여 작성되며, 변수와 매우 유사합니다.  
+     즉, 벡터변수 이름을 생성하고 논리값을 대입하기 위해서는
+     벡터변수이름, 기호(<- 또는 =), c(논리값1, 논리값2, ..., 논리값n)을 입력합니다.  벡터변수이름은 영문자를 처음에 사용하고
+     이후 숫자를 혼용할 수 있습니다.'
+
+- Class: text
+  Output: '논리값 TRUE와 FALSE는 문자열로 되어 있지만, 변수에서와 같이 따옴표를 사용하지 않습니다.'
+
+- Class: cmd_question
+  Output: '논리 벡터를 학습하기 위하여, 벡터변수 vi 를 선언하고 c() 함수와 논리값(TRUE, FALSE, TRUE)을 이용, 
+           vi에 대입해 봅시다.'   
+  CorrectAnswer: vi <- c(TRUE, FALSE, TRUE)
+  AnswerTests: any_of_exprs('vi <- c(TRUE, FALSE, TRUE)', 'vi<-c(TRUE,FALSE,TRUE)')
+  Hint: '다음을 입력 vi <- c(TRUE, FALSE, TRUE).  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 논리값이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vi
+  AnswerTests: any_of_exprs('vi', 'print(vi)')
+  Hint: 다음을 입력 vi.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vi)
+  AnswerTests: any_of_exprs('vi', 'print(vi)')
+  Hint: 다음을 입력 print(vi).
+
+- Class: text
+  Output: '논리값 TRUE와 FALSE는 전체를 전부 사용해도 되지만, 간략하게 T와 F로 사용할 수 있습니다. 하지만, 반드시 대문자를 사용해야 합니다.'
+
+- Class: cmd_question
+  Output: '이제, 간략화된 논리 벡터를 학습하기 위하여, 벡터변수 vj 를 선언하고 c() 함수와 문자열값 (T,F,T)을 이용, 
+           vj에 대입해 봅시다.'   
+  CorrectAnswer: vj <- c(T,F,T)
+  AnswerTests: any_of_exprs('vj <- c(T,F,T)', 'vj<-c(T,F,T)')
+  Hint: '다음을 입력 vj <- c(T,F,T).  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vj
+  AnswerTests: any_of_exprs('vj', 'print(vj)')
+  Hint: 다음을 입력 vj.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vj)
+  AnswerTests: any_of_exprs('vj', 'print(vj)')
+  Hint: 다음을 입력 print(vj).
+
+- Class: cmd_question
+  Output: 이제, TRUE/FALSE와 간략화된 T/F를 혼용 사용한 벡터변수를 학습하기 위하여, 
+      벡터변수 vk 를 선언하고 c() 함수와 
+      혼용된 값(TRUE,F,TRUE)를 이용, vk에 대입해 봅시다. 
+  CorrectAnswer: vk <- c(TRUE,F,TRUE)
+  AnswerTests: any_of_exprs('vk <- c(TRUE,F,TRUE)', 'vk<-c(TRUE,F,TRUE)')
+  Hint: '다음을 입력 vk <- c(TRUE,F,TRUE).  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vk
+  AnswerTests: any_of_exprs('vk', 'print(vk)')
+  Hint: 다음을 입력 vk.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vk)
+  AnswerTests: any_of_exprs('vk', 'print(vk)')
+  Hint: 다음을 입력 print(vk).
+
+- Class: text
+  Output: 이제 숫자형 벡터변수에 대한 학습을 마감할 시간입니다.  
+
+- Class: mult_question  
+  Output: 마감하기 전에, 다음 문제를 풀어봅시다.  
+     벡터변수 vv에 c(T,FALSE,"F")를 대입할 때, vv의 인쇄 결과로 맞는 것은? 
+  AnswerChoices: 'TRUE FALSE "F";T FALSE "F";"T"FALSE "F";TRUE FALSE FALSE'
+  CorrectAnswer: 'TRUE FALSE "F"'
+  AnswerTests: omnitest(correctVal= 'TRUE FALSE "F"')
+  Hint: 'R 논리벡터에서 TRUE/FALSE/T/F는 모두 대문자로 TRUE와 FALSE를 나타낸다는 것을 기억하세요.'
+
