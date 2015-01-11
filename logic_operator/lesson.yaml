@@ -124,7 +124,7 @@
 
 - Class: mult_question  
   Output: 마감하기 전에, 다음 문제를 풀어봅시다.  A가 FALSE 이고 B가 TRUE 일때, A&B, A||B, !B의 결과값을 순서대로 적은 것은? 
-  AnswerChoices: FALSE,TRUE,FALSE;TRUE,TRUE,FALSE;FALSE,TRUE,TRUE;TRUE,TRUE,FALSE;
+  AnswerChoices: FALSE,TRUE,FALSE;TRUE,TRUE,FALSE;FALSE,TRUE,TRUE;TRUE,TRUE,FALSE
   CorrectAnswer: FALSE,TRUE,FALSE
   AnswerTests: omnitest(correctVal= 'FALSE,TRUE,FALSE')
   Hint: '&는 모두 TRUE 일때만 TRUE, ||는 모두 FALSE 일때만 FALSE, !는 반대값을 기억하세요.'
