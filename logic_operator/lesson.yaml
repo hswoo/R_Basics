@@ -18,14 +18,10 @@
   Output: 논리 연산자는 불린(논리)값을 대상으로 비교한 결과가 논리값으로 결정되는 연산자를 말합니다.  
 
 - Class: text
-  Output: '논리연산자는 !, &, || 가 존재합니다. 부호 양 옆의 불린값에 따라 의미와 결과가 달라집니다.'
+  Output: '논리연산자는 &, ||, ! 가 존재합니다. 부호 양 옆의 불린값에 따라 의미와 결과가 달라집니다.'
 
 - Class: text
-  Output: '비교연산자 ! 가 !A 형태로 사용될 때는, A의 값에 따라, A가 TRUE 이면 결과값이 FALSE, 
-     A가 FALSE 이면 결과값이 TRUE 가 됩니다.'
-
-- Class: text
-  Output: '또한, 비교연산자 & 가 A & B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
+  Output: '논리연산자 & 가 A & B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
      즉, (A,B)가 (TRUE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (TRUE,FALSE) 인 경우는 결과값이 FALSE, 
          (A,B)가 (FALSE,TRUE) 인 경우는 결과값이 FALSE, (A,B)가 (FALSE,FALSE) 인 경우는 결과값이 FALSE 입니다.'
 
@@ -33,12 +29,16 @@
   Output: 정리하면, A & B 결과값은 A와 B가 모두 TRUE 인 경우만 결과값이 TRUE 입니다. 나머지 경우는 모두 FALSE 입니다.
 
 - Class: text
-  Output: '또한, 비교연산자 || 가 A || B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
+  Output: '또한, 논리연산자 || 가 A || B 형태로 사용될 때는, 연산자 좌우 A, B의 논리값에 따라 결과값이 달라 집니다.  
      즉, (A,B)가 (TRUE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (TRUE,FALSE) 인 경우는 결과값이 TRUE, 
          (A,B)가 (FALSE,TRUE) 인 경우는 결과값이 TRUE, (A,B)가 (FALSE,FALSE) 인 경우는 결과값이 FALSE 입니다.'
 
 - Class: text
   Output: 정리하면, A || B 결과값은 A와 B가 모두 FASLE 인 경우만 결과값이 FALSE 입니다. 나머지 경우는 모두 TRUE 입니다.
+
+- Class: text
+  Output: '논리연산자 ! 가 !A 형태로 사용될 때는, A의 값에 따라, A가 TRUE 이면 결과값이 FALSE, 
+     A가 FALSE 이면 결과값이 TRUE 가 됩니다.'
 
 - Class: cmd_question
   Output: 논리 연산자를 학습하기 위하여, 변수 A 를 선언하고 논리값 TRUE 를 대입해 봅시다.   
@@ -53,7 +53,7 @@
   Hint: '다음을 입력 B <- FALSE. 대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
 
 - Class: cmd_question
-  Output: '이제, 논리 연산자를 활용하여 A & B 결과값을 알아 봅시다.  
+  Output: '이제, 논리 연산자 & 를 활용하여 A & B 결과값을 알아 봅시다.  
            변수 C를 선언하고 표현식을 대입합니다. 
            참고로 표현식은 변수 연산자(&) 변수의 순서로 입력합니다.'   
   CorrectAnswer: C <- A & B
@@ -77,7 +77,7 @@
   Hint: 다음을 입력 print(C).
 
 - Class: cmd_question
-  Output: '이제, 논리 연산자를 활용하여 A || B 결과값을 알아 봅시다.  
+  Output: '이제, 논리 연산자 || 를 활용하여 A || B 결과값을 알아 봅시다.  
            변수 D를 선언하고 표현식을 대입합니다. 
            참고로 표현식은 변수 연산자(||) 변수의 순서로 입력합니다.'   
   CorrectAnswer: D <- A || B
