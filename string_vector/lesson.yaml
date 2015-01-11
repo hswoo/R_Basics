@@ -1,0 +1,111 @@
+﻿- Class: meta
+  Course: R Programming
+  Lesson: nemerical vector
+  Author: prof. hswoo
+  Type: Coursera
+  Organization: Daejeon Univ.
+  Version: 2015.1.11.0.1
+
+- Class: text
+  Output: 이번 강의는 R 프로그래밍 언어에서 사용되는 문자열 벡터를 학습합니다. 
+
+- Class: text
+  Output: 학습 도중에 R과 관련하여 특정 토픽에 추가 정보가 필요하면, help.start()를 타이핑합니다. 
+    그러면 RStudio, 웹 브라우저 등등 설정에 따라서 R 메뉴가 호출됩니다.  혹시 정보가 부족하면 
+    웹 서칭을 해보는 것도 한 방법입니다.
+
+- Class: text
+  Output: R에서 문자열 벡터는 스칼라의 조합으로 연속적인 문자열 값의 조합이라 할 수 있습니다.   
+
+- Class: text
+  Output: '문자열 벡터는 c() 함수를 이용하여 작성되며, 변수와 매우 유사합니다.  
+     즉, 벡터변수 이름을 생성하고 값을 대입하기 위해서는
+     벡터변수이름, 기호(<- 또는 =), c(값1, 값2, ..., 값n)을 입력합니다.  벡터변수이름은 영문자를 처음에 사용하고
+     이후 숫자를 혼용할 수 있습니다.'
+
+- Class: text
+  Output: '문자열 데이터는 문자 벡터를 이용하여 저장할 수 있습니다. 
+           문자열 벡터는 숫자, 문자, 문자열 모두 사용가능하며,
+           혼용될 때는 숫자는 문자로 인식되어 표기합니다.'
+
+- Class: cmd_question
+  Output: '문자 벡터를 학습하기 위하여, 벡터변수 vs 를 선언하고 c() 함수와 문자값("f","o","o","d")을 이용, 
+           vs에 대입해 봅시다.'   
+  CorrectAnswer: vs <- c("f","o","o","d")
+  AnswerTests: any_of_exprs('vs <- c("f","o","o","d")', 'vs<-c("f","o","o","d")')
+  Hint: '다음을 입력 vs <- c("f","o","o","d").  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vs
+  AnswerTests: any_of_exprs('vs', 'print(vs)')
+  Hint: 다음을 입력 vs.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vs)
+  AnswerTests: any_of_exprs('vs', 'print(vs)')
+  Hint: 다음을 입력 print(vs).
+
+- Class: cmd_question
+  Output: '이제, 문자열 벡터를 학습하기 위하여, 벡터변수 vt 를 선언하고 c() 함수와 문자열값("food","feed","feel")을 이용, 
+           vt에 대입해 봅시다.'   
+  CorrectAnswer: vt <- c("food","feed","feel")
+  AnswerTests: any_of_exprs('vt <- c("food","feed","feel")', 'vt<-c("food","feed","feel")')
+  Hint: '다음을 입력 vt <- c("food","feed","feel").  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vt
+  AnswerTests: any_of_exprs('vt', 'print(vt)')
+  Hint: 다음을 입력 vt.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vt)
+  AnswerTests: any_of_exprs('vt', 'print(vt)')
+  Hint: 다음을 입력 print(vt).
+
+- Class: cmd_question
+  Output: 이제, 숫자와 문자, 문자열이 혼용된 벡터변수를 학습하기 위하여, 벡터변수 vu 를 선언하고 c() 함수와 
+      정수 및 실수가 혼용된 값("i","ate",3,"potatoes")를 이용, vu에 대입해 봅시다. 
+      참고로 혼용될 때는 실수형으로 대체하여 표기합니다. 
+  CorrectAnswer: vu <- c("i","ate",3,"potatoes")
+  AnswerTests: any_of_exprs('vu <- c("i","ate",3,"potatoes")', 'vu<-c("i","ate",3,"potatoes")')
+  Hint: '다음을 입력 vu <- c("i","ate",3,"potatoes").  대입연산자 좌우에 빈칸을 입력하는 것이 중요합니다. 하지만 화살표는 `<`와 `-` 사이에 빈칸이 없어야 합니다.'
+
+- Class: text
+  Output: 계산식에서 연산자 좌우의 빈칸은 중요하지 않습니다. 
+
+- Class: cmd_question
+  Output: 계산식이 대입된 벡터변수의 값을 확인하기 위해서는 변수값을 인쇄할 필요가 있으며, 
+     R에서는 해당 벡터변수이름을 입력합니다.  한번 해봅시다.
+  CorrectAnswer: vu
+  AnswerTests: any_of_exprs('vu', 'print(vu)')
+  Hint: 다음을 입력 vu.
+
+- Class: cmd_question
+  Output: print(벡터변수이름) 함수를 이용하면 보다 명확하게 벡터변수의 값을 인쇄할 수 있습니다. 한번 해봅시다.
+  CorrectAnswer: print(vu)
+  AnswerTests: any_of_exprs('vu', 'print(vu)')
+  Hint: 다음을 입력 print(vu).
+
+- Class: text
+  Output: 이제 숫자형 벡터변수에 대한 학습을 마감할 시간입니다.  
+
+- Class: mult_question  
+  Output: 마감하기 전에, 다음 문제를 풀어봅시다.  
+     벡터변수 vv에 c("i","have",1,"apple", "and",3, "melons")를 대입할 때, vv의 인쇄 결과로 맞는 것은? 
+  AnswerChoices: i have 1.0 apple and 3 melons;i have 1 apple and 3.0 melons;i have 1.0 appleand 3.0 melons;i have 1 apple and 3 melons
+  CorrectAnswer: i have 1 apple and 3 melons
+  AnswerTests: omnitest(correctVal= 'i have 1 apple and 3 melons')
+  Hint: 'R에서 벡터는 숫자를 문자로 표기한다는 것을 기억하세요.'
+
