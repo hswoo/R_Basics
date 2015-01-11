@@ -97,7 +97,7 @@
   AnswerTests: any_of_exprs('D', 'print(D)')
   Hint: 다음을 입력 print(D).
 
-- Class: text
+- Class: cmd_question
   Output: '자, 이제는 해당 논리변수값의 반대(역)을 표현하는 논리연산자인 !에 대한 학습을 해 봅시다.
            논리 연산자 ! 를 활용하여 !A 결과값을 알아 봅시다.  
            변수 E를 선언하고 표현식을 대입합니다. 
